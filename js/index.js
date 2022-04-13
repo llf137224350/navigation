@@ -37,6 +37,7 @@
       navBar.appendChild(fragment);
     }
   }
+
   function init() {
     var date = new Date();
     document.getElementById("copyright").innerText = "©" + date.getFullYear();
@@ -104,6 +105,7 @@
     edit.click();
   });
 
+  // 点击添加
   add.addEventListener("click", function () {
     var title = document.getElementById("title");
     var url = document.getElementById("url");
@@ -127,5 +129,19 @@
     edit.click();
   });
 
+  // 标题和网址回车回调事件
+  function addInfo(e) {
+    var theEvent = e || window.event;
+    var code = theEvent.keyCode || theEvent.which || theEvent.charCode;
+    if (code == 13) {
+      //回车执行查询
+      add.click();
+    }
+  }
+  // 回车添加
+  document.getElementById("title").addEventListener("keydown", addInfo);
+  document.getElementById("url").addEventListener("keydown", addInfo);
+
+  // 初始化
   init();
 })();

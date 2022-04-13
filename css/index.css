@@ -1,6 +1,7 @@
 body {
   display: flex;
   flex-direction: column;
+  min-width: 678px;
   height: 100vh;
 }
 .nav-bar {

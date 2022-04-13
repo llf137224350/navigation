@@ -21,29 +21,28 @@
   function initUrls() {
     urls = getStorageSync("urls") || [];
     var navBar = document.getElementById("nav-bar");
-    if (urls.length) {
-      var fragment = document.createDocumentFragment();
-      for (var i = 0; i < urls.length; i++) {
-        var li = document.createElement("li");
-        li.setAttribute("class", "nav-bar-item");
 
-        var a = document.createElement("a");
-        a.setAttribute("href", urls[i].url);
-        a.setAttribute("target", "_blank");
-        a.innerText = urls[i].title;
+    var fragment = document.createDocumentFragment();
+    for (var i = 0; i < urls.length; i++) {
+      var li = document.createElement("li");
+      li.setAttribute("class", "nav-bar-item");
 
-        var remove = document.createElement("img");
-        remove.setAttribute("src", "./images/remove.png");
-        remove.setAttribute("class", "remove");
-        remove.setAttribute("title", "删除");
-        remove.setAttribute("data-index", i);
-        li.appendChild(a);
-        li.appendChild(remove);
-        fragment.appendChild(li);
-      }
-      navBar.innerHTML = "";
-      navBar.appendChild(fragment);
+      var a = document.createElement("a");
+      a.setAttribute("href", urls[i].url);
+      a.setAttribute("target", "_blank");
+      a.innerText = urls[i].title;
+
+      var remove = document.createElement("img");
+      remove.setAttribute("src", "./images/remove.png");
+      remove.setAttribute("class", "remove");
+      remove.setAttribute("title", "删除");
+      remove.setAttribute("data-index", i);
+      li.appendChild(a);
+      li.appendChild(remove);
+      fragment.appendChild(li);
     }
+    navBar.innerHTML = "";
+    navBar.appendChild(fragment);
   }
 
   function init() {

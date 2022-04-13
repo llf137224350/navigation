@@ -54,7 +54,7 @@ header {
   opacity: 0;
 }
 .nav-bar .nav-bar-item:hover .remove {
-  opacity: 1;
+  opacity: .6;
 }
 .body {
   padding-top: 120px;

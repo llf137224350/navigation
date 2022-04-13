@@ -30,7 +30,10 @@ header {
 }
 
 .nav-bar .nav-bar-item {
-  margin-right: 24px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-right: 12px;
   color: #222;
   font-size: 13px;
 }
@@ -42,6 +45,16 @@ header {
   color: #06bbc2;
 }
 
+.nav-bar .nav-bar-item .remove {
+  margin-left: 8px;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
+}
+.nav-bar .nav-bar-item:hover .remove {
+  opacity: 1;
+}
 .body {
   padding-top: 120px;
   flex: 1;

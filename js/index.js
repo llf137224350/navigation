@@ -26,11 +26,19 @@
       for (var i = 0; i < urls.length; i++) {
         var li = document.createElement("li");
         li.setAttribute("class", "nav-bar-item");
+
         var a = document.createElement("a");
         a.setAttribute("href", urls[i].url);
         a.setAttribute("target", "_blank");
         a.innerText = urls[i].title;
+
+        var remove = document.createElement("img");
+        remove.setAttribute("src", "./images/remove.png");
+        remove.setAttribute("class", "remove");
+        remove.setAttribute("title", "删除");
+        remove.setAttribute("data-index", i);
         li.appendChild(a);
+        li.appendChild(remove);
         fragment.appendChild(li);
       }
       navBar.innerHTML = "";
@@ -42,6 +50,20 @@
     var date = new Date();
     document.getElementById("copyright").innerText = "©" + date.getFullYear();
     initUrls();
+    // 移除事件
+    document.addEventListener("click", function name(e) {
+      if (e.target) {
+        if (e.target.classList.contains("remove")) {
+          var index = e.target.dataset.index * 1;
+          var flag = confirm('确定移除"' + urls[index].title + '"吗？');
+          if (flag) {
+            urls.splice(index, 1);
+            setStorageSync("urls", urls);
+            initUrls();
+          }
+        }
+      }
+    });
   }
 
   // 搜索

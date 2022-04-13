@@ -2,6 +2,7 @@
   --animate-duration: 0.5s;
   --animate-delay: 0.5s;
   --animate-repeat: 0.5;
+  --themeColor: #06bbc2;
 }
 
 body {
@@ -42,7 +43,7 @@ header {
 }
 
 .nav-bar .nav-bar-item a:hover {
-  color: #06bbc2;
+  color: var(--themeColor);
 }
 
 .nav-bar .nav-bar-item .remove {
@@ -99,7 +100,7 @@ header {
 }
 
 .body .input-wrapper input:focus {
-  border: 2px solid #06bbc2;
+  border: 2px solid var(--themeColor);
   border-right: none;
 }
 
@@ -114,7 +115,7 @@ header {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border: none;
-  background: #06bbc2;
+  background: var(--themeColor);
   cursor: pointer;
   box-shadow: none;
 }
@@ -178,7 +179,7 @@ header {
   box-sizing: border-box;
 }
 .wrapper .input-item input:hover {
-  border: 1px solid #06bbc2;
+  border: 1px solid var(--themeColor);
 }
 
 .wrapper .input-item button {
@@ -189,7 +190,7 @@ header {
   font-size: 16px;
   color: #fff;
   border: none;
-  background: #06bbc2;
+  background: var(--themeColor);
   border-radius: 10px;
   cursor: pointer;
 }

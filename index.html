@@ -3,50 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0 user-scalable=yes"
+    />
     <title>导航</title>
     <link rel="icon" href="./images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://lib.baomitu.com/animate.css/4.1.1/animate.compat.css"
+    />
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/index.css" />
   </head>
   <body>
     <header>
-      <ul class="nav-bar">
-        <li class="nav-bar-item">
-          <a href="https://www.baidu.com" target="_blank">百度</a>
-        </li>
-        <li class="nav-bar-item">
-          <a href="https://www.163.com/" target="_blank">网易</a>
-        </li>
-        <li class="nav-bar-item">
-          <a href="https://www.hao123.com/?src=from_pc" target="_blank"
-            >hao123</a
-          >
-        </li>
-        <li class="nav-bar-item">
-          <a href="https://github.com/" target="_blank">GitHub</a>
-        </li>
-        <li class="nav-bar-item">
-          <a href="https://www.npmjs.com/" target="_blank">NPM</a>
-        </li>
-        <li class="nav-bar-item">
-          <a href="http://www.uicoder.cn/mini_core_docs/" target="_blank"
-            >MINI-CORE</a
-          >
-        </li>
-        <li class="nav-bar-item">
-          <a href="http://www.uicoder.cn/hello_json/" target="_blank"
-            >HelloJSON</a
-          >
-        </li>
-        <li class="nav-bar-item">
-          <a
-            href="https://developers.weixin.qq.com/miniprogram/dev/api/"
-            target="_blank"
-            >微信小程序</a
-          >
-        </li>
-      </ul>
+      <ul class="nav-bar" id="nav-bar"></ul>
+      <img src="./images/edit.png" title="添加导航" class="edit" id="edit" />
     </header>
     <div class="body">
       <img src="./images//logo.png" class="logo" />
@@ -65,13 +38,24 @@
         <li>
           <a href="javascript: void(0);" id="copyright"></a>
         </li>
-        <li>
-          <a href="https://github.com/llf137224350/navigation" target="_blank"
-            >项目源码</a
-          >
-        </li>
       </ul>
     </footer>
+
+    <!-- 遮罩面板 -->
+    <div class="mask animated" id="mask"></div>
+    <div class="wrapper animated" id="wrapper">
+      <div class="title">添加导航</div>
+      <div class="input-item">
+        <input type="text" placeholder="请输入标题" id="title"/>
+      </div>
+      <div class="input-item">
+        <input type="text" placeholder="请输入网址"  id="url"/>
+      </div>
+      <div class="input-item tip">信息存储在浏览器存储环境中，并不提交到服务器，请放心使用！</div>
+      <div class="input-item">
+        <button id="add">添加</button>
+      </div>
+    </div>
     <script src="./js/index.js"></script>
   </body>
 </html>

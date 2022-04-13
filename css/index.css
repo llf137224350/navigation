@@ -1,15 +1,32 @@
+:root {
+  --animate-duration: 0.5s;
+  --animate-delay: 0.5s;
+  --animate-repeat: 0.5;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-width: 678px;
   height: 100vh;
 }
-.nav-bar {
+header {
   display: flex;
   align-items: center;
   padding: 0 24px;
   height: 60px;
+}
+.nav-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 60px;
   box-sizing: border-box;
+}
+.edit {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
 }
 
 .nav-bar .nav-bar-item {
@@ -67,10 +84,12 @@ body {
   border-right: none;
   background: rgba(0, 0, 0, 0);
 }
+
 .body .input-wrapper input:focus {
   border: 2px solid #06bbc2;
   border-right: none;
 }
+
 .body .input-wrapper button {
   flex: 0 0 108px;
   width: 108px;
@@ -101,5 +120,68 @@ body {
   margin-right: 0;
 }
 .footer > li > a {
+  color: #bbb;
+}
+
+/* 添加导航 */
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  display: none;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 120px;
+  width: 400px;
+  background: #fff;
+  z-index: 2;
+  display: none;
+}
+
+.wrapper .title {
+  text-align: center;
+  font-size: 20px;
+}
+.wrapper .input-item {
+  margin-top: 20px;
+  padding: 0 20px;
+}
+.wrapper .input-item input {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  outline: none;
+  border: 1px solid #c4c7ce;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+.wrapper .input-item input:hover {
+  border: 1px solid #06bbc2;
+}
+
+.wrapper .input-item button {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 44px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  background: #06bbc2;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.wrapper .input-item.tip {
+  margin-top: 10px;
+  font-size: 12px;
   color: #bbb;
 }
